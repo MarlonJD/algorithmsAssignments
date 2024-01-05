@@ -62,7 +62,7 @@ python main.py
 
 **Farklı Yaklaşım:** Simulated Annealing, iş makinesi atama problemini çözmek için kullanılan bir metaheuristik algoritmadır. Rastgele atamalardan başlayarak, enerji fonksiyonunu minimize etmeye çalışır.
 
-**Kullanım Gerekçeleri ve Performans Değerlendirmesi:** Simulated Annealing'in kullanım gerekçeleri şunlardır: global optimizasyon problemleriyle başa çıkabilme yeteneği, başlangıç çözümünden kaçış yeteneği. Performansı, farklı başlangıç durumları ve sıcaklık parametreleri ile test edildiğinde şu şekildedir: [Performans değerlendirmesi].
+**Kullanım Gerekçeleri ve Performans Değerlendirmesi:** Simulated Annealing'in kullanım gerekçeleri şunlardır: global optimizasyon problemleriyle başa çıkabilme yeteneği, başlangıç çözümünden kaçış yeteneği.
 
 **Algoritmaların Etkinliklerinin Değerlendirilmesi:**
 

@@ -5,10 +5,14 @@ import geneticalgorithm as ga
 from simanneal import Annealer
 import random
 import matplotlib.pyplot as plt
+import os
+import  io
+from memory_profiler import profile
 
 # Örnek Veri
-cost_matrix = np.random.randint(1, 10, (50, 50))
+cost_matrix = np.random.randint(1, 10, (1000, 1000))
 
+@profile
 def run_hungarian_method():
     global cost_matrix  # Global değişkeni kullan
     # Eğer matris kare değilse, kareye çevir
@@ -23,6 +27,7 @@ def run_hungarian_method():
     print("Toplam Maliyet (Hungarian):", cost_matrix[row_ind, col_ind].sum())
     return cost_matrix[row_ind, col_ind].sum()
 
+@profile
 def run_annealer():
     num_jobs, num_machines = cost_matrix.shape
 
@@ -55,7 +60,7 @@ def run_annealer():
     print("\n\nOptimal Atamalar (Annealer):", best_state)
     print("Toplam Maliyet (Annealer): ", best_cost)
 
-
+@profile
 def run_genetic_algorithm():
     num_jobs, num_machines = cost_matrix.shape
 
@@ -91,6 +96,7 @@ def run_genetic_algorithm():
     print("Toplam Maliyet (Genetik):", model.output_dict['function'])
     return model.output_dict['function']
 
+# Memory Profiling
 hungarian_method_time = timeit.timeit(run_hungarian_method, number=1)
 simulated_annealer_time = timeit.timeit(run_annealer, number=1)
 genetic_algorithm_time = timeit.timeit(run_genetic_algorithm, number=1)
@@ -100,6 +106,7 @@ print("Uygulama\tZaman")
 print("Macar Algoritması\t", hungarian_method_time)
 print("Simulated Annealer\t", simulated_annealer_time)
 print("Genetik Algoritma\t", genetic_algorithm_time)
+
 
 # plot the hungarian_method_time and simulated_annealer_time line chart
 
